@@ -37,8 +37,12 @@ class SearchKeyword(BaseModel):
 
 # Root endpoint
 @app.get("/")
-async def root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+async def root():
+    return {
+        "greeting": "Welome to wiki search api",
+       
+        
+    }
 
 # Search for Wikipedia articles
 @app.post("/search/")
